@@ -23,6 +23,11 @@
       <div class="nav-btn">
         <a href="https://api.whatsapp.com/send?phone=6282313356805" class="btn">Book Table</a>
       </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
   </nav>
 
@@ -124,6 +129,20 @@
     </div>
   </footer>
 
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-menu li a").forEach(n => n.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }));
+  </script>
 </body>
 
 </html>
